@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+
+  deno:
+    image: deno
+    build: ./deno
+    volumes:
+      - /d/github/deno_random-generator:/var/local/deno_random-generator
+      - /d/github/deno_alephjs_something01:/var/local/deno_alephjs_something01
+      - /d/github/deno_alephjs_something01:/home/deno-user/git-workspace/deno_alephjs_something01
