@@ -71,3 +71,41 @@ Aleph.js is ready to go!
 Docs: https://alephjs.org/docs
 Bugs: https://alephjs.org.com/alephjs/aleph.js/issues
 ```
+
+## step2
+
+```bash
+#aleph dev
+# ホットリロードが効かないならstartでいい気がします。
+aleph start
+```
+
+## step3
+
+components/logo.tsx
+をコピーして同じディレクトリに
+footer.tsxを作成
+
+pages/index.tsxのcopyinfoの行を移植
+
+app.tsxに
+```react
+import { useDeno } from 'aleph/react'
+import CommonFooter from '~/components/footer.tsx'
+```
+追加
+
+headの中に
+```react
+<link rel="stylesheet" href="./style/common.css" />
+```
+追加
+
+Pageの下に
+```react
+<CommonFooter version={useDeno(() => Deno.version.deno)} />
+```
+追加
+
+style/index.cssの一部をcommon.cssとして移動
+良い感じにレイアウト調整
