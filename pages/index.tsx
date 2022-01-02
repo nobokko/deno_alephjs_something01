@@ -35,7 +35,6 @@ export default function Home() {
         <button onClick={decrease}>-</button>
         <button onClick={increase}>+</button>
       </div>
-      {/* <p className="copyinfo">Built by Aleph.js in Deno {version}</p> */}
     </div>
   )
 }

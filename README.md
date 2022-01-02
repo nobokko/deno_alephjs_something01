@@ -109,3 +109,43 @@ Pageの下に
 
 style/index.cssの一部をcommon.cssとして移動
 良い感じにレイアウト調整
+
+## step4
+
+参考：https://www.freecodecamp.org/news/build-react-app-using-deno-and-alephjs/#2-how-to-import-libraries-from-npm
+
+components/logo.tsx
+をコピーして同じディレクトリに
+clock.tsxを作成
+
+dayjsとその関連プラグインをimport
+
+useStateで
+* 現在時刻
+* 現在タイムゾーン
+* タイムゾーン一覧
+を定義
+
+useEffectで
+* 一秒ごとに現在時刻をリフレッシュするsetTimeout
+を定義
+
+画面上プルダウンのタイムゾーンを変更した際に現在タイムゾーンを更新する関数
+を定義
+
+return(render)に上記の構成を良い感じに定義
+
+style/index.css
+良い感じにレイアウト調整
+
+app.tsxに
+```react
+import Clock from '~/components/clock.tsx'
+```
+追加
+
+Pageの下に
+```react
+<Clock />
+```
+追加

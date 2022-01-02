@@ -6,6 +6,11 @@ main {
     height: 100vh;
 }
 
+my-clock{
+    position: sticky;
+    top: 0;
+}
+
 footer {
     position: sticky;
     bottom: 0;
