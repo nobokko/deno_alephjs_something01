@@ -9,7 +9,10 @@
       "deno.ns",
       "deno.unstable"
     ],
-    "jsx": "react"
+    "jsx": "react",
+    "types": [
+      "lib.dom.d.ts"
+    ]
   },
   "lint": {},
   "format": {}

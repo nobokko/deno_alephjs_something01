@@ -1,14 +1,17 @@
 // react is a compulsoy import in Aleph
 import React, { useEffect, useState } from "react";
+import { Fallback } from "aleph/react";
 
 // import the dayjs npm library using esm.sh
 import dayjs from "dayjs";
 import utc from "dayjs/utc";
 import timezone from "dayjs/timezone";
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    'my-clock': { name: string }
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "my-clock": { children: (string | Element)[] };
+    }
   }
 }
 
@@ -52,15 +55,17 @@ export default function Clock() {
   // call the dayjs function directly to display today's date
   return (
     <my-clock>
-      {nowdatetime}
-      <select
-        name="clock-tz"
-        onChange={(e) => handleTztypesChange(e)}
-      >
-        {tztypes.map((Add) => Add).map((address, key) => (
-          <option key={key} value={key}>{address}</option>
-        ))}
-      </select>
+      <Fallback to={<p>loading...</p>}>
+        {nowdatetime}
+        <select
+          name="clock-tz"
+          onChange={(e) => handleTztypesChange(e)}
+        >
+          {tztypes.map((Add) => Add).map((address, key) => (
+            <option key={key} value={key}>{address}</option>
+          ))}
+        </select>
+      </Fallback>
     </my-clock>
   );
 }

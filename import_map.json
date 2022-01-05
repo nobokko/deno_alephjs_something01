@@ -7,6 +7,8 @@
     "aleph/react": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/mod.ts",
     "react": "https://esm.sh/react@17.0.2",
     "react-dom": "https://esm.sh/react-dom@17.0.2",
+    "react-router": "https://esm.sh/react-router@6.2.1",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.2.1",
     "dayjs": "https://esm.sh/dayjs@1.10.7",
     "dayjs/utc": "https://esm.sh/dayjs@1.10.7/plugin/utc",
     "dayjs/timezone": "https://esm.sh/dayjs@1.10.7/plugin/timezone",

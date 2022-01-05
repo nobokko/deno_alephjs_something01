@@ -1,9 +1,11 @@
-import React, { FC } from 'react'
-import { useDeno } from 'aleph/react'
-import CommonFooter from '~/components/footer.tsx'
-import Clock from '~/components/clock.tsx'
+import React, { FC, useRef, useEffect, useCallback, useState, createContext } from "react";
+import { useDeno } from "aleph/react";
+import CommonFooter from "~/components/footer.tsx";
+import Clock from "~/components/clock.tsx";
 
-export default function App({ Page, pageProps }: { Page: FC, pageProps: Record<string, unknown> }) {
+export default function App(
+  { Page, pageProps }: { Page: FC; pageProps: Record<string, unknown> },
+) {
   return (
     <main>
       <head>
@@ -14,5 +16,5 @@ export default function App({ Page, pageProps }: { Page: FC, pageProps: Record<s
       <Page {...pageProps} />
       <CommonFooter version={useDeno(() => Deno.version.deno)} />
     </main>
-  )
+  );
 }

@@ -7,19 +7,30 @@ import FilterButton from "~/components/react_todo_list_beginning/FilterButton.ts
 import React, { useEffect, useRef, useState } from "react";
 import { nanoid } from "nanoid";
 
+interface TaskInfo {
+  id: string;
+  name: string;
+  completed?: boolean;
+}
+
+interface TaskFilterInfo {
+  All: () => true,
+  Active: (task: TaskInfo) => boolean,
+  Completed: (task: TaskInfo) => boolean,
+}
+
 export default function App(
   { pageProps }: { pageProps: Record<string, unknown> },
 ) {
-  function usePrevious(value: number): number {
-    const ref = useRef();
+  function usePrevious(value: number) {
+    const ref = useRef<number>();
     useEffect(() => {
       ref.current = value;
     });
-    return ref.current;
+    return ref.current ?? 0;
   }
 
-  const listHeadingRef: React.MutableRefObject<HTMLHeadingElement | null> =
-    useRef(null);
+  const listHeadingRef = useRef<HTMLHeadingElement>(null!);
 
   function toggleTaskCompleted(id: string) {
     const updatedTasks = tasks.map((task) => {
@@ -51,7 +62,7 @@ export default function App(
     setTasks(editedTaskList);
   }
 
-  const DATA = [
+  const DATA: TaskInfo[] = [
     { id: "todo-0", name: "Eat", completed: true },
     { id: "todo-1", name: "Sleep", completed: false },
     { id: "todo-2", name: "Repeat" },
@@ -59,13 +70,13 @@ export default function App(
 
   const [tasks, setTasks] = useState(DATA);
 
-  const [filter, setFilter] = useState("All");
-
-  const FILTER_MAP = {
+  const FILTER_MAP:TaskFilterInfo = {
     All: () => true,
-    Active: (task) => !task.completed,
-    Completed: (task) => task.completed,
+    Active: (task: TaskInfo) => !task.completed,
+    Completed: (task: TaskInfo) => task.completed ?? false,
   };
+
+  const [filter, setFilter] = useState<keyof TaskFilterInfo>("All" as keyof TaskFilterInfo);
 
   const FILTER_NAMES = Object.keys(FILTER_MAP);
 

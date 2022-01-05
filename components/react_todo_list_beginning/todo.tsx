@@ -21,35 +21,35 @@ export default function Todo(
   const [isEditing, setEditing] = useState(false);
   const [newName, setNewName] = useState("");
 
-  const editFieldRef: React.MutableRefObject<HTMLInputElement | null> = useRef(
-    null,
+  const editFieldRef = useRef<HTMLInputElement>(
+    null!,
   );
-  const editButtonRef: React.MutableRefObject<HTMLButtonElement | null> = useRef(
-    null,
+  const editButtonRef = useRef<HTMLButtonElement>(
+    null!,
   );
 
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setNewName(e.target.value);
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     editTask(id, newName);
     setNewName("");
     setEditing(false);
   }
 
-  function usePrevious(value:boolean) {
-    const ref = useRef();
+  function usePrevious(value: boolean) {
+    const ref = useRef<boolean>();
     useEffect(() => {
       ref.current = value;
     });
-    return ref.current;
+    return ref.current ?? false;
   }
   const wasEditing = usePrevious(isEditing);
   useEffect(() => {
     if (!wasEditing && isEditing) {
-      editFieldRef?.current?.focus();
+      editFieldRef.current.focus();
     }
     if (wasEditing && !isEditing) {
       editButtonRef?.current?.focus();

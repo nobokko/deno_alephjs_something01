@@ -2,14 +2,17 @@ import React, { useState } from "react";
 
 export default function Form({ addTask }: { addTask: CallableFunction }) {
   const [name, setName] = useState("new task");
-  function handleSubmit(e) {
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     addTask(name);
     setName("");
   }
-  function handleChange(e) {
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setName(e.target.value);
   }
+
   return (
     <form onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
