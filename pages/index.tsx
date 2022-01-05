@@ -36,12 +36,8 @@ export default function Home() {
         <a href="https://github.com/alephjs/aleph.js" target="_blank">Github</a>
       </p>
       <p className="links">
-        <Link to="/react_todo_list_beginning" replace={false}>react_todo_list_beginning</Link>
-        <Link to="/react_todo_list_beginning" replace={true}>react_todo_list_beginning</Link>
-        <a rel="nav" href="/react_todo_list_beginning">
-          react_todo_list_beginning
-        </a>
-        <a href="/react_todo_list_beginningx">react_todo_list_beginning</a>
+        <Link to="/react_todo_list_beginning">react_todo_list_beginning</Link>
+        <Link to="/react_todo_list_beginningx">404</Link>
       </p>
       <div className="counter">
         <span>Counter:</span>

@@ -1,11 +1,12 @@
 import React from "react";
 // import { useRouter } from "aleph/react";
 import Logo from "~/components/logo.tsx";
+import { Link } from "~/components/link.tsx";
 
 export default function E404() {
-//   const routerinfo = useRouter();
-//   console.log({routerinfo});
-//   routerinfo.push('/');
+  //   const routerinfo = useRouter();
+  //   console.log({routerinfo});
+  //   routerinfo.push('/');
   return (
     <div className="e404">
       <head>
@@ -17,11 +18,11 @@ export default function E404() {
         <Logo />
       </p>
       <p className="links">
-        <a rel="nav" href="/">home</a>
+        <Link to="/">home</Link>
         <span></span>
-        <a rel="nav" href="/react_todo_list_beginning">
+        <Link to="/react_todo_list_beginning">
           react_todo_list_beginning
-        </a>
+        </Link>
       </p>
     </div>
   );

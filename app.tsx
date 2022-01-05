@@ -2,6 +2,7 @@ import React, { FC, useRef, useEffect, useCallback, useState, createContext } fr
 import { useDeno } from "aleph/react";
 import CommonFooter from "~/components/footer.tsx";
 import Clock from "~/components/clock.tsx";
+import Nav from "~/components/nav.tsx";
 
 export default function App(
   { Page, pageProps }: { Page: FC; pageProps: Record<string, unknown> },
@@ -13,6 +14,7 @@ export default function App(
         <link rel="stylesheet" href="./style/common.css" />
       </head>
       <Clock />
+      <Nav />
       <Page {...pageProps} />
       <CommonFooter version={useDeno(() => Deno.version.deno)} />
     </main>

@@ -12,6 +12,23 @@ my-clock{
     top: 0;
 }
 
+.breadcrumbs {
+    list-style: none;
+    overflow: hidden;
+    min-width: 50vw;
+    /* font: 16px; */
+    /* margin: 30px; */
+    padding: 0px;
+    /* border: 2px solid black; */
+    font-style: italic;
+}
+.breadcrumbs li {
+    float: left;
+}
+.breadcrumbs li:nth-of-type(n+2):before {
+    content: ">";
+}
+
 footer {
     z-index: 100;
     position: sticky;
