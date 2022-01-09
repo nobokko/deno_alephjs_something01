@@ -37,6 +37,7 @@ export default function Home() {
       </p>
       <p className="links">
         <Link to="/react_todo_list_beginning">react_todo_list_beginning</Link>
+        <Link to="/conways_game_of_life">conways_game_of_life</Link>
         <Link to="/react_todo_list_beginningx">404</Link>
       </p>
       <div className="counter">

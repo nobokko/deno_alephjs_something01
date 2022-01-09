@@ -1,0 +1,40 @@
+@import url('./reset.css');
+
+[is="cgol-parameter-box"] {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000000;
+}
+[is="cgol-parameter-box"]:not([open]) {
+    position: sticky;
+    top:0;
+}
+
+[is="cgol-operation-box"] {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000000;
+}
+[is="cgol-operation-box"]:not([open]) {
+    position: sticky;
+    bottom:0;
+}
+
+[is="cgl-board"] {
+    /* height: min(100vh, 100vw); */
+    /* width: min(100vh, 100vw); */
+    display: grid;
+    /* grid-template-columns: repeat(attr(data-x), 1fr); */
+    gap: 1px;
+}
+
+[is="cgl-board"] [is="cgl-cell"] {
+    /* width: 32px; */
+    /* height: 32px; */
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+[is="cgl-board"] [is="cgl-cell"][data-live] {
+    background-color: deeppink;
+}

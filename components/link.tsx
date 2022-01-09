@@ -16,6 +16,7 @@ export const Link: FC<{ to: string; replace?: boolean; rel?: string }> = (
   const PATH_TITLE_MAP: { [key: string]: string } = {
     "/": "Home",
     "/react_todo_list_beginning": "Todo管理",
+    "/conways_game_of_life": "らいふげぇむ",
   };
 
   useEffect(() => {
