@@ -38,7 +38,7 @@ const Board = forwardRef<BoardImperativeHandles, {
     {
       x: defaultX,
       y: defaultY,
-      alivemap: Array(defaultX * defaultY).fill(true),
+      alivemap: Array(defaultX * defaultY).fill(false),
     } as prevBoardInfo,
   );
   useEffect(() => {
